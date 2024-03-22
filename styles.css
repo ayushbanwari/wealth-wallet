@@ -234,11 +234,11 @@ input[type="range"]::-webkit-slider-thumb {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300px; /* Set the desired height */
+    height: 290px; /* Set the desired height */
 }
 
 #pie-chart {
-    max-width: 70%; /* Ensure the chart doesn't exceed its container */
+    max-width: 80%; /* Ensure the chart doesn't exceed its container */
 }
 
 #income-per-paycheck {
