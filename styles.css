@@ -138,7 +138,6 @@ body {
     width: 100%;
     border-collapse: collapse;
     max-height: 250px;
-    overflow-y: auto;
     overflow-x: auto;
     display: block;
 }

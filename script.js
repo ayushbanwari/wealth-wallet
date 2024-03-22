@@ -14,13 +14,18 @@ function updatePercentageDisplay() {
     document.getElementById('savings-percentage-display').textContent = savingsSlider + '%';
 
     // Retrieve income per paycheck
-    const incomePerPaycheck = parseFloat(document.getElementById('income-per-paycheck').value);
+    let incomePerPaycheck = 0;
+    
+    const incomeInput = document.getElementById('income-per-paycheck').value;
+    if (incomeInput.trim() !== '') {
+        incomePerPaycheck = parseFloat(incomeInput);
+    }
 
     // Calculate and update amounts next to sliders
     const needsAmount = (needsSlider / 100) * incomePerPaycheck;
     const wantsAmount = (wantsSlider / 100) * incomePerPaycheck;
     const savingsAmount = (savingsSlider / 100) * incomePerPaycheck;
-
+    
     document.getElementById('needs-amount-display').textContent = '$' + needsAmount.toFixed(0);
     document.getElementById('wants-amount-display').textContent = '$' + wantsAmount.toFixed(0);
     document.getElementById('savings-amount-display').textContent = '$' + savingsAmount.toFixed(0);
@@ -69,6 +74,7 @@ function handleSliderChange(sliderId) {
     const percentage = parseInt(slider.value);
     const amount = (percentage / 100) * monthlySalary;
 
+
     // Update the displayed amount
     document.getElementById(amountDisplayId).textContent = `$${amount.toFixed(2)}`;  // Add this line
 
@@ -83,13 +89,13 @@ function handleSliderChange(sliderId) {
 function updateSliderAmounts() {
     // Retrieve monthly salary
     const monthlySalary = parseFloat(document.getElementById('income-per-paycheck').value);
-
+    
     // Retrieve percentage values from sliders
     const needsPercentage = parseInt(document.getElementById('needs-slider').value);
     const wantsPercentage = parseInt(document.getElementById('wants-slider').value);
     const savingsPercentage = parseInt(document.getElementById('savings-slider').value);
 
-    // Calculate amounts based on percentages
+   	// Calculate amounts based on percentages
     const needsAmount = (needsPercentage / 100) * monthlySalary;
     const wantsAmount = (wantsPercentage / 100) * monthlySalary;
     const savingsAmount = (savingsPercentage / 100) * monthlySalary;
