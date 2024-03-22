@@ -163,7 +163,7 @@ function submitTargets() {
     compareExpensesWithTargets();
 
     // Provide instructions for the user
-    alert('Targets submitted! Press the "Expense Chart" tab to view the updated chart.');
+    alert('Targets submitted! Press the "Summary" tab to view the updated chart.');
 }
 
 // Function to update the Expense Chart with targets
