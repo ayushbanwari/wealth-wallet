@@ -40,6 +40,15 @@ body {
     color: #333;
 }
 
+@media screen and (max-width: 600px) {
+    /* Adjust the navbar for smaller screens */
+    .navbar a {
+        float: none;
+        display: block;
+        text-align: center;
+    }
+}
+
 #instructions {
     display: block;
 }
@@ -124,6 +133,7 @@ body {
 }
 
 /* Add this CSS to your existing styles.css file */
+
 #summary-table {
     width: 100%;
     border-collapse: collapse;
@@ -141,8 +151,8 @@ body {
         border: 0;
     }
 
-    #summary-table thead {
-        display: none;
+    #summary-table thead th {
+        display: table-cell; /* Ensure that the table headers are always displayed */
     }
 
     #summary-table tbody {
@@ -160,7 +170,7 @@ body {
         justify-content: space-between;
     }
 
-    #summary-table tbody td::before {
+    #summary-table tbody td span {
         font-weight: bold;
     }
 }
