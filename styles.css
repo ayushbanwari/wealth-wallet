@@ -45,12 +45,6 @@ body {
     .navbar {
         overflow: visible; /* Allow navbar items to be visible */
     }
-    
-    .navbar a {
-        float: none;
-        display: block;
-        text-align: center;
-    }
 }
 
 #instructions {
