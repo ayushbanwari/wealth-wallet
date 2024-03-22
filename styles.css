@@ -137,14 +137,15 @@ body {
 #summary-table {
     width: 100%;
     border-collapse: collapse;
+    max-height: 200px;
+    overflow-y: auto;
+    display: block;
 }
 
 #summary-table th,
 #summary-table td {
     padding: 8px;
     border: 1px solid #ddd;
-    overflow-x: auto;
-    overflow-y: auto;
 }
 
 #summary-table th {
