@@ -123,16 +123,46 @@ body {
     font-weight: bold;
 }
 
+/* Add this CSS to your existing styles.css file */
 #summary-table {
+    width: 100%;
     border-collapse: collapse;
-    margin-top: 8px;
 }
 
 #summary-table th,
 #summary-table td {
+    padding: 8px;
     border: 1px solid #ddd;
-    padding: 7px;
-    text-align: left;
+}
+
+@media screen and (max-width: 600px) {
+    /* Adjust the table layout for smaller screens */
+    #summary-table {
+        border: 0;
+    }
+
+    #summary-table thead {
+        display: none;
+    }
+
+    #summary-table tbody {
+        display: block;
+        width: 100%;
+    }
+
+    #summary-table tbody tr {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    #summary-table tbody td {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #summary-table tbody td::before {
+        font-weight: bold;
+    }
 }
 
 #summary-table th {
