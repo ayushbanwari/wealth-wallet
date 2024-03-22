@@ -135,7 +135,7 @@ body {
 }
 
 #summary-table-container {
-    max-width: 50%;
+    max-width: 100%;
     max-height: 200px;
     overflow: auto;
 }
@@ -151,7 +151,7 @@ body {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
-    font-size: 12px;
+    font-size: 10px;
 }
 
 #summary-table th {
