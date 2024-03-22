@@ -115,15 +115,16 @@
         <div id="pie-chart-container">
             <canvas id="pie-chart"></canvas>
         </div>
-        <table id="summary-table">
-            <thead>
+        <div id="summary-table-container">
+        	<table id="summary-table">
+            	<thead>
                 <tr>
                     <th>Category</th>
                     <th>Actuals</th>
                     <th>Targets</th>
                 </tr>
-            </thead>
-            <tbody>
+            	</thead>
+            	<tbody>
                 <tr>
                     <td>Needs</td>
                     <td id="needs-percentage">0%</td>
@@ -139,11 +140,12 @@
                     <td id="savings-percentage">0%</td>
                     <td id="savings-target-display">0%</td>
                 </tr>
-            </tbody>
-        </table>
-        <div id="needs-message" class="expense-message"></div>
-        <div id="wants-message" class="expense-message"></div>
-        <div id="savings-message" class="expense-message"></div>
+            	</tbody>
+        	</table>
+        	<div id="needs-message" class="expense-message"></div>
+        	<div id="wants-message" class="expense-message"></div>
+        	<div id="savings-message" class="expense-message"></div>
+        </div>
     </div>
 
     <script src="script.js"></script>

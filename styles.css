@@ -49,7 +49,6 @@ body {
     .navbar a {
         display: inline-block; /* Display navbar items in a line */
         float: none;
-        margin-right: 2px; /* Add some spacing between navbar items */
     }
 }
 
@@ -157,8 +156,19 @@ body {
         border: 0;
     }
 
-    #summary-table thead th {
-        display: table-cell; /* Ensure that the table headers are always displayed */
+    #summary-table-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #summary-table-container > div {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #summary-table thead {
+        display: none; /* Hide the table header */
     }
 
     #summary-table tbody {
@@ -169,11 +179,14 @@ body {
     #summary-table tbody tr {
         display: block;
         margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
     }
 
     #summary-table tbody td {
         display: flex;
         justify-content: space-between;
+        padding: 8px;
     }
 
     #summary-table tbody td span {
