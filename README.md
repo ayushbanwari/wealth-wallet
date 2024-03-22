@@ -1,0 +1,15 @@
+# WEALTH WALLET
+#### Video Demo:  https://www.youtube.com/watch?v=RXIjHbG6o3Y
+#### Description:
+
+Setup:
+Welcome to the Setup tab! Here, you'll initiate your budget management journey. Begin by entering the income you receive per paycheck into the designated field. This figure represents your earnings before any deductions or taxes. Upon entering your income, you'll encounter three sliders labeled Needs, Wants, and Savings. These sliders are your tools for allocating portions of your income to different expense categories. Adjust each slider to reflect the proportion of your income you wish to designate to essential needs, discretionary wants, and future savings. As you manipulate the sliders, you'll notice the numbers adjacent to them automatically updating to display the selected percentage. Once satisfied with your allocations, you can proceed to expense management.
+
+Adding Expenses:
+Transitioning to the Add Expenses tab, you can input detailed records of your expenditures. Kickstart the process by typing the name of the expense into the provided field. This could range from necessities like rent and groceries to indulgences like entertainment and dining out. Next, input the precise amount expended for the specified item, ensuring it's entered numerically. Select the appropriate category for the expense from the dropdown menu, aligning with the Needs, Wants, and Savings divisions established in the Setup tab. Once all details are accurately entered, click the "Add Expense" button to integrate it into your budget. You'll observe the expense reflected in the list below, accompanied by the subtotal of all entered expenses.
+
+Expense Chart:
+Venture into the Expense Chart tab to uncover insights into your spending patterns. Here, a comprehensive breakdown of expenses across the Needs, Wants, and Savings categories awaits you. This graphical representation illuminates how your budget is distributed, facilitating the identification of areas where overspending or underspending may occur. Additionally, you'll have the ability to compare your actual expenses against the targets set in the Setup tab. Any discrepancies between actual and targeted expenditures will prompt messages indicating whether you're above, below, or on target for each category.
+
+Monthly Management:
+Arriving at the Monthly Management tab, you'll find the means to archive your budget data for the present month while preparing for the forthcoming one. Initiate by selecting the current month from the dropdown menu. Upon selection, you'll be presented with the option to safeguard your budget data for the ongoing month. Simply click the "Save Current Month" button to preserve your expense data and reset your budget for the impending month. This action effectively clears all expense entries and resets the expense totals and percentages to zero, offering a clean slate for the subsequent month. It's an efficient method for monitoring expenses on a monthly basis and ensuring the perpetual relevance of your budget.

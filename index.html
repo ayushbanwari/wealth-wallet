@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="#" onclick="showTab('instructions')">Instructions</a>
+        <a href="#" onclick="showTab('setUp')">Set-Up</a>
+        <a href="#" onclick="showTab('addExpenses')">Add Expenses</a>
+        <a href="#" onclick="showTab('expenseChart')">Expense Chart</a>
+    </div>
+
+    <div id="instructions" class="tab-content">
+        <h2 style="text-align: center; font-family: 'Arial', sans-serif;">Welcome to the Wealth Wallet!</h2>
+        <p style="font-family: 'Arial', sans-serif;">Follow these steps to make the most of the application:</p>
+        <ol style="font-family: 'Arial', sans-serif; line-height: 1.5;">
+            <li><strong>Setup:</strong> Enter income per paycheck and adjust sliders for Needs, Wants, and Savings.</li>
+            <li><strong>Add Expenses:</strong> Input expense details and click "Add Expense" to update totals.</li>
+            <li><strong>Expense Chart:</strong> View expense breakdown and compare with set targets.</li>
+            <li><strong>Monthly Management:</strong> Save current month's data in PNG file and reset for the next month.</li>
+        </ol>
+
+        <div id="tips-section">
+            <h2>Tips for Financial Wellness</h2>
+            <p id="tips-content">Loading tips...</p>
+        </div>
+    </div>
+
+    <div id="setUp" class="tab-content">
+        <label for="income-per-paycheck">Income Per Paycheck:</label>
+        <input type="number" id="income-per-paycheck" required>
+
+        <h3>Expense Category Allocation</h3>
+        <p>Use the sliders to set the percentage for each category.</p>
+
+        <div class="category-label" onmouseover="showTooltip('needs')" onmouseout="hideTooltip()">
+            <label for="needs-slider">
+                <strong>Needs:</strong>
+                <span id="needs-percentage-display">50%</span>
+                [ <span id="needs-amount-display">0</span> ]
+                <div class="tooltip" id="needs-tooltip" data-tooltip="Essential expenses like rent, groceries, and utilities.">?</div>
+            </label>
+        </div>
+        <input type="range" id="needs-slider" min="0" max="100" value="50" oninput="updatePercentageDisplay()">
+
+        <div class="category-label" onmouseover="showTooltip('wants')" onmouseout="hideTooltip()">
+            <label for="wants-slider">
+                <strong>Wants:</strong>
+                <span id="wants-percentage-display">30%</span>
+                [ <span id="wants-amount-display">0</span> ]
+                <div class="tooltip" id="wants-tooltip" data-tooltip="Non-essential expenses for leisure and entertainment.">?</div>
+            </label>
+        </div>
+        <input type="range" id="wants-slider" min="0" max="100" value="30" oninput="updatePercentageDisplay()">
+
+        <div class="category-label" onmouseover="showTooltip('savings')" onmouseout="hideTooltip()">
+            <label for="savings-slider">
+                <strong>Savings:</strong>
+                <span id="savings-percentage-display">20%</span>
+                [ <span id="savings-amount-display">0</span> ]
+                <div class="tooltip" id="savings-tooltip" data-tooltip="Funds set aside for future goals and emergencies.">?</div>
+            </label>
+        </div>
+        <input type="range" id="savings-slider" min="0" max="100" value="20" oninput="updatePercentageDisplay()">
+
+        <p>Total Percentage: <span id="total-percentage-display">100%</span></p>
+
+        <button onclick="submitTargets()">Submit Targets</button>
+    </div>
+
+    <div id="addExpenses" class="tab-content">
+        <div id="add-expenses-form">
+            <h2>Add Expenses</h2>
+            <form id="expense-form">
+                <label for="expense-name">Expense Name:</label>
+                <input type="text" id="expense-name" required>
+
+                <label for="expense-amount">Amount:</label>
+                <input type="number" id="expense-amount" required>
+
+                <label for="expense-category">Category:</label>
+                <select id="expense-category">
+                    <option value="Needs">Needs (Rent, Groceries, Utilities)</option>
+                    <option value="Wants">Wants (Restaurants, Concerts, Travel)</option>
+                    <option value="Savings">Savings (Future Goals, Emergencies)</option>
+                </select>
+
+                <button type="button" onclick="addExpense()">Add Expense</button>
+            </form>
+            <table id="expenses-table" class="styled-table scrollable-table">
+                <thead>
+                    <tr>
+                        <th>Expense</th>
+                        <th>Amount</th>
+                        <th>Category</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="expenses-list"></tbody>
+            </table>
+            <div id="subtotal">Subtotal: $<span id="subtotal-amount">0.00</span></div>
+        </div>
+    </div>
+
+    <div id="expenseChart" class="tab-content">
+        <h2>Expense Chart</h2>
+        <label for="month-select">Month</label>
+        <select class = "month-select" id="month-select"></select>
+        <button class="center-button" type="button" onclick="saveCurrentMonth()">Save and Reset</button>
+        <br></br>
+        <div id="pie-chart-container">
+            <canvas id="pie-chart"></canvas>
+        </div>
+        <table id="summary-table">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Actuals</th>
+                    <th>Targets</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Needs</td>
+                    <td id="needs-percentage">0%</td>
+                    <td id="needs-target-display">0%</td>
+                </tr>
+                <tr>
+                    <td>Wants</td>
+                    <td id="wants-percentage">0%</td>
+                    <td id="wants-target-display">0%</td>
+                </tr>
+                <tr>
+                    <td>Savings</td>
+                    <td id="savings-percentage">0%</td>
+                    <td id="savings-target-display">0%</td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="needs-message" class="expense-message"></div>
+        <div id="wants-message" class="expense-message"></div>
+        <div id="savings-message" class="expense-message"></div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
