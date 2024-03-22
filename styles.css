@@ -134,18 +134,23 @@ body {
     font-weight: bold;
 }
 
+#summary-table-container {
+    max-width: 100%;
+    max-height: 200px;
+    overflow: auto;
+}
+
 #summary-table {
     width: 100%;
     border-collapse: collapse;
-    max-height: 250px;
-    overflow-x: auto;
-    display: block;
+    margin-top: 20px;
 }
 
 #summary-table th,
 #summary-table td {
-    padding: 8px;
     border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
 }
 
 #summary-table th {
@@ -273,7 +278,7 @@ input[type="range"]::-webkit-slider-thumb {
     font-size: 18px;
     color: #3498db;
     cursor: pointer;
-    margin-left: 385px;
+    margin-left: 300px;
 }
 
 .tooltip::after {
