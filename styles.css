@@ -42,6 +42,10 @@ body {
 
 @media screen and (max-width: 600px) {
     /* Adjust the navbar for smaller screens */
+    .navbar {
+        overflow: visible; /* Allow navbar items to be visible */
+    }
+    
     .navbar a {
         float: none;
         display: block;
@@ -132,8 +136,6 @@ body {
     font-weight: bold;
 }
 
-/* Add this CSS to your existing styles.css file */
-
 #summary-table {
     width: 100%;
     border-collapse: collapse;
@@ -143,36 +145,6 @@ body {
 #summary-table td {
     padding: 8px;
     border: 1px solid #ddd;
-}
-
-@media screen and (max-width: 600px) {
-    /* Adjust the table layout for smaller screens */
-    #summary-table {
-        border: 0;
-    }
-
-    #summary-table thead th {
-        display: table-cell; /* Ensure that the table headers are always displayed */
-    }
-
-    #summary-table tbody {
-        display: block;
-        width: 100%;
-    }
-
-    #summary-table tbody tr {
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    #summary-table tbody td {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    #summary-table tbody td span {
-        font-weight: bold;
-    }
 }
 
 #summary-table th {
