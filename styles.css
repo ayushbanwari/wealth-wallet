@@ -124,15 +124,15 @@ body {
 }
 
 #summary-table {
-    width: 100%;
+    width: 90%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 8px;
 }
 
 #summary-table th,
 #summary-table td {
     border: 1px solid #ddd;
-    padding: 6px;
+    padding: 8px;
     text-align: left;
 }
 
@@ -304,6 +304,7 @@ input[type="range"]::-webkit-slider-thumb {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-left: 80px;
 }
 
 .month-select {
