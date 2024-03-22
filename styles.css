@@ -305,7 +305,7 @@ input[type="range"]::-webkit-slider-thumb {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 15px;
-    margin-left: 100px;
+    margin-left: 85px;
 }
 
 .month-select {
@@ -316,5 +316,5 @@ input[type="range"]::-webkit-slider-thumb {
     font-size: 14px;
     color: #333;
     cursor: pointer;
-    margin-left: 11px;
+    margin-left: 1px;
 }

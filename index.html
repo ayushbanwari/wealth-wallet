@@ -11,10 +11,10 @@
 <body>
 
     <div class="navbar">
-        <a href="#" onclick="showTab('instructions')">Instructions</a>
-        <a href="#" onclick="showTab('setUp')">Set-Up</a>
-        <a href="#" onclick="showTab('addExpenses')">Add Expenses</a>
-        <a href="#" onclick="showTab('expenseChart')">Expense Chart</a>
+        <a href="#" onclick="showTab('instructions')">Home</a>
+        <a href="#" onclick="showTab('setUp')">Setup</a>
+        <a href="#" onclick="showTab('addExpenses')">Add Expense</a>
+        <a href="#" onclick="showTab('expenseChart')">Summary</a>
     </div>
 
     <div id="instructions" class="tab-content">
@@ -22,8 +22,8 @@
         <p style="font-family: 'Arial', sans-serif;">Follow these steps to make the most of the application:</p>
         <ol style="font-family: 'Arial', sans-serif; line-height: 1.5;">
             <li><strong>Setup:</strong> Enter income per paycheck and adjust sliders for Needs, Wants, and Savings.</li>
-            <li><strong>Add Expenses:</strong> Input expense details and click "Add Expense" to update totals.</li>
-            <li><strong>Expense Chart:</strong> View expense breakdown and compare with set targets.</li>
+            <li><strong>Add Expense:</strong> Input expense details and click "Add Expense" to update totals.</li>
+            <li><strong>Summary:</strong> View expense breakdown and compare with set targets.</li>
             <li><strong>Monthly Management:</strong> Save current month's data in PNG file and reset for the next month.</li>
         </ol>
 
@@ -77,7 +77,6 @@
 
     <div id="addExpenses" class="tab-content">
         <div id="add-expenses-form">
-            <h2>Add Expenses</h2>
             <form id="expense-form">
                 <label for="expense-name">Expense Name:</label>
                 <input type="text" id="expense-name" required>
@@ -110,7 +109,6 @@
     </div>
 
     <div id="expenseChart" class="tab-content">
-        <h2>Expense Chart</h2>
         <label for="month-select">Month</label>
         <select class = "month-select" id="month-select"></select>
         <button class="center-button" type="button" onclick="saveCurrentMonth()">Save and Reset</button>
