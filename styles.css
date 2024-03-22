@@ -48,7 +48,6 @@ body {
 
     .navbar a {
         display: inline-block; /* Display navbar items in a line */
-        float: none;
     }
 }
 
@@ -168,7 +167,9 @@ body {
     }
 
     #summary-table thead {
-        display: none; /* Hide the table header */
+        display: flex;
+        justify-content: space-between;
+        padding: 8px;
     }
 
     #summary-table tbody {
