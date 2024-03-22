@@ -151,7 +151,7 @@ body {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 #summary-table th {
@@ -311,6 +311,7 @@ input[type="range"]::-webkit-slider-thumb {
 .expense-message {
     margin-top: 8px;
     text-align: center;
+    font-size: 15px;
 }
 
 .center-button {
