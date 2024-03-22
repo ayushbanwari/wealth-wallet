@@ -150,48 +150,27 @@ body {
 }
 
 @media screen and (max-width: 600px) {
-    /* Adjust the table layout for smaller screens */
     #summary-table {
-        border: 0;
-    }
-
-    #summary-table-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #summary-table-container > div {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    #summary-table thead {
-        display: flex;
-        justify-content: space-between;
-        padding: 8px;
-    }
-
-    #summary-table tbody {
+        /* Adjust table layout for smaller screens */
         display: block;
         width: 100%;
+        overflow-x: auto; /* Enable horizontal scrolling if needed */
     }
-
-    #summary-table tbody tr {
-        display: block;
-        margin-bottom: 10px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
+    
+    #summary-table thead,
+    #summary-table tbody,
+    #summary-table tr,
+    #summary-table th,
+    #summary-table td {
+        /* Reset display properties to default */
+        display: table;
+        width: auto;
     }
-
-    #summary-table tbody td {
-        display: flex;
-        justify-content: space-between;
+    
+    #summary-table th,
+    #summary-table td {
+        /* Adjust padding or other styles as needed */
         padding: 8px;
-    }
-
-    #summary-table tbody td span {
-        font-weight: bold;
     }
 }
 
