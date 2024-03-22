@@ -49,7 +49,7 @@ body {
     .navbar a {
         display: inline-block; /* Display navbar items in a line */
         float: none;
-        margin-right: 5px; /* Add some spacing between navbar items */
+        margin-right: 2px; /* Add some spacing between navbar items */
     }
 }
 
@@ -149,6 +149,36 @@ body {
 
 #summary-table th {
     background-color: #f2f2f2;
+}
+
+@media screen and (max-width: 600px) {
+    /* Adjust the table layout for smaller screens */
+    #summary-table {
+        border: 0;
+    }
+
+    #summary-table thead th {
+        display: table-cell; /* Ensure that the table headers are always displayed */
+    }
+
+    #summary-table tbody {
+        display: block;
+        width: 100%;
+    }
+
+    #summary-table tbody tr {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    #summary-table tbody td {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #summary-table tbody td span {
+        font-weight: bold;
+    }
 }
 
 #instructions h3 {
@@ -310,12 +340,11 @@ input[type="range"]::-webkit-slider-thumb {
     margin: 0 auto;
     background-color: #3498db;
     color: white;
-    padding: 5px 10px;
+    padding: 5px 5px;
     font-size: 13px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 80px;
 }
 
 .month-select {
